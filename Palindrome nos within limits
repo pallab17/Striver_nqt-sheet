@@ -1,3 +1,38 @@
 
 q.Find all Palindrome Numbers in a given range
 ans.
+//@pb7
+#include <iostream>
+
+using namespace std;
+
+bool reverse(int num){
+    // num take store korchi as calc r time e hariye felbo amra num ke
+    int sum=0,r,n=num;
+    while(n>0){
+       r = n %10;
+       sum = sum*10 + r;
+       n=n/10;
+    }
+    
+    return (num==sum)?true:false;
+    
+}
+
+int main()
+{
+    int min_num = 10;
+    int max_num = 50;
+    
+    for(int i=min_num;i<=max_num;i++){
+        if(reverse(i)){
+            cout<<i<<" ";
+        } 
+        // else{
+        //   cout<<"Not Paliindrome"<<endl; 
+        // }
+        
+    }
+    return 0;
+}
+
